@@ -6,14 +6,24 @@ server:
   port: 8888
 
 spring:
+  rabbitmq:
+    addresses: 192.168.48.51:5672
+    username: admin
+    password: passwd
+    publisher-confirms: true
+    virtual-host: /
   cloud:
     config:
       server:
         git:
           uri: https://github.com/David8977/springcloud
           searchPaths: configfile
-
+          username: 182315544@qq.com
+          password: wangwei316
 #          uri: https://git.oschina.net/chrywhy/test
 #          searchPaths: spring-cloud/helloworldConfig
   application:
     name: config-server
+management:
+  security:
+    enabled: false
